@@ -549,6 +549,7 @@ form.rsvp{
     <div class="section-head reveal">
       <span class="eyebrow">Galeria</span>
       <h2>Alguns dos nossos momentos</h2>
+      <p>Substitua os blocos abaixo pelas fotos de vocês (procure por <code>.gallery-item</code> no código).</p>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item reveal"><img src="./foto1.jpeg" alt="Natália e Anderson"></div>
@@ -906,8 +907,6 @@ tiltEls.forEach(el => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const nome = document.getElementById('nome').value.trim();
-    const presenca = form.querySelector('input[name="presenca"]:checked').value;
-    const acompanhantes = parseInt(document.getElementById('acompanhantes').value || '0', 10);
     const mensagem = document.getElementById('mensagem').value.trim();
 
     const nomeValido = listaConvidados.some(n => n.toLowerCase() === nome.toLowerCase());
@@ -920,13 +919,11 @@ tiltEls.forEach(el => {
     try {
       const res = await fetch(URL_APPS_SCRIPT, {
         method: 'POST',
-        body: JSON.stringify({ nome, presenca, acompanhantes, mensagem })
+        body: JSON.stringify({ nome, presenca: 'sim', acompanhantes: 0, mensagem })
       });
       const resultado = await res.json();
       if (!resultado || !resultado.ok) throw new Error('Falha ao salvar');
-      msgEl.textContent = presenca === 'sim'
-        ? 'Presença confirmada! Mal podemos esperar para te ver lá. 💛'
-        : 'Obrigado por avisar — você vai fazer falta!';
+      msgEl.textContent = 'Presença confirmada! Mal podemos esperar para te ver lá. 💛';
       msgEl.className = 'ok';
       form.reset();
       carregarListaConvidados();
