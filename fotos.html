@@ -4,23 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="./monograma.png">
-<title>Lista de Presentes — Natália & Anderson</title>
-<meta name="description" content="Sua presença é o melhor presente, mas se desejar nos presentear, criamos uma lista com carinho.">
+<title>Compartilhe suas Fotos — Natália & Anderson</title>
+<meta name="description" content="Escaneie o QR code e enviem suas fotos para a galeria do casamento de Natália e Anderson.">
 <meta name="color-scheme" content="light">
 
 <!-- Open Graph / WhatsApp / Instagram preview -->
-<meta property="og:title" content="Lista de Presentes — Natália & Anderson">
-<meta property="og:description" content="Sua presença é o melhor presente, mas se desejar nos presentear, criamos uma lista com carinho.">
+<meta property="og:title" content="Compartilhe suas Fotos — Natália & Anderson">
+<meta property="og:description" content="Escaneie o QR code e enviem suas fotos para a galeria do casamento de Natália e Anderson.">
 <meta property="og:image" content="./opengraph.jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
-<meta property="og:url" content="/presentes.html">
+<meta property="og:url" content="/fotos.html">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Lista de Presentes — Natália & Anderson">
-<meta name="twitter:description" content="Sua presença é o melhor presente, mas se desejar nos presentear, criamos uma lista com carinho.">
+<meta name="twitter:title" content="Compartilhe suas Fotos — Natália & Anderson">
+<meta name="twitter:description" content="Escaneie o QR code e enviem suas fotos para a galeria do casamento de Natália e Anderson.">
 <meta name="twitter:image" content="./opengraph.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -143,7 +143,7 @@
     .nav-toggle{display:block;}
   }
 
-  /* HERO CINEMATOGRÁFICA (versão mais curta para página interna) */
+  /* HERO CINEMATOGRÁFICA (versão interna) */
   .hero-cinema{
     position:relative;
     height:62svh;
@@ -213,7 +213,7 @@
     .hero-cinema-title{text-align:center;}
   }
 
-  /* BOTÕES MAGNÉTICOS (igual ao index) */
+  /* BOTÕES MAGNÉTICOS */
   .btn-magnetic{
     position:relative; display:inline-flex; align-items:center; justify-content:center;
     padding:16px 34px; border-radius:999px; overflow:hidden;
@@ -253,7 +253,7 @@
     .music-toggle{right:16px; bottom:16px; width:46px; height:46px;}
   }
 
-  /* SEAL DIVIDER — premium (igual ao index) */
+  /* SEAL DIVIDER */
   .divider-seal{
     display:flex; align-items:center; justify-content:center;
     gap:clamp(14px, 4vw, 30px);
@@ -298,8 +298,6 @@
   @media (max-width:760px){
     .divider-seal{min-height:72px;}
   }
-  section.alt .divider-seal .line.left{background:linear-gradient(to right, transparent 0%, var(--terracota) 70%);}
-  section.alt .divider-seal .line.right{background:linear-gradient(to left, transparent 0%, var(--terracota) 70%);}
 
   section{padding:64px 0; position:relative;}
   @media (max-width:760px){
@@ -310,47 +308,128 @@
   .section-head h2{font-size:clamp(2.1rem,4.4vw,3rem); margin-top:10px;}
   .section-head p{color:var(--tinta-suave); margin-top:14px; font-size:1.02rem;}
 
-  /* PRESENTES */
-  .gifts-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:920px; margin:0 auto;}
-  .gift-card{
-    background:var(--vidro); border-radius:16px; padding:28px; text-align:center;
-    border:1px solid var(--vidro-borda); box-shadow:var(--sombra);
+  /* QR CODE */
+  .qr-card{
+    max-width:560px; margin:0 auto;
+    background:var(--vidro); border-radius:20px; padding:40px 44px; box-shadow:var(--sombra);
+    border:1px solid var(--vidro-borda);
     backdrop-filter:blur(14px) saturate(160%);
     -webkit-backdrop-filter:blur(14px) saturate(160%);
+    text-align:center;
   }
-  .gift-card:hover{transform:translateY(-6px) scale(1.02); box-shadow:0 22px 40px -12px rgba(0,0,0,.18);}
-  .gift-card .ico{font-size:1.8rem;}
-  .gift-card h3{font-size:1.2rem; margin-top:10px;}
-  .gift-card p{color:var(--tinta-suave); font-size:0.9rem; margin-top:8px;}
-  .gift-card .valor{margin-top:14px; font-family:'Fraunces',serif; font-style:italic; font-size:1.05rem; color:var(--terracota-funda);}
-  .gift-card .pix-key{
-    margin-top:14px; font-family:monospace; background:var(--areia-funda); padding:8px 12px;
-    border-radius:8px; font-size:0.82rem; word-break:break-all;
+  .qr-card:hover{transform:translateY(-6px); box-shadow:0 22px 40px -12px rgba(0,0,0,.18);}
+  .qr-card img{
+    width:200px; height:200px; margin:0 auto 20px;
+    border-radius:14px; box-shadow:0 4px 20px rgba(0,0,0,0.1);
   }
-  @media (max-width:760px){.gifts-grid{grid-template-columns:1fr;}}
+  .qr-card h3{font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:1.5rem; margin-bottom:10px;}
+  .qr-card p{color:var(--tinta-suave); font-size:0.96rem;}
 
-  /* PIX DESTAQUE */
-  .pix-card{
-    max-width:560px; margin:0 auto;
-    background:linear-gradient(135deg, var(--verde) 0%, var(--verde-funda) 100%);
-    border-radius:20px; padding:40px 44px; box-shadow:var(--sombra);
-    border:1px solid var(--linha); text-align:center;
+  /* UPLOAD */
+  .upload-card{
+    max-width:640px; margin:40px auto 0;
+    background:var(--vidro); border-radius:20px; padding:40px 44px; box-shadow:var(--sombra);
+    border:1px solid var(--vidro-borda);
+    backdrop-filter:blur(14px) saturate(160%);
+    -webkit-backdrop-filter:blur(14px) saturate(160%);
+    text-align:center;
   }
-  .pix-card h3{color:#fff; font-family:'Fraunces',serif; font-style:italic; font-weight:400; font-size:1.7rem;}
-  .pix-card p{color:rgba(250,243,228,0.85); margin-top:10px; font-size:0.96rem;}
-  .pix-key-box{
-    margin-top:18px; display:flex; align-items:center; gap:10px; justify-content:center; flex-wrap:wrap;
-    background:rgba(250,243,228,0.14); border:1px solid rgba(250,243,228,0.35);
-    border-radius:10px; padding:12px 14px;
+  .upload-card:hover{transform:translateY(-6px); box-shadow:0 22px 40px -12px rgba(0,0,0,.18);}
+  .upload-zone{
+    border:3px dashed var(--linha);
+    border-radius:16px;
+    padding:40px 20px;
+    margin:20px 0;
+    background:rgba(242,244,234,0.3);
+    cursor:pointer;
+    transition:border-color .3s ease, background .3s ease;
   }
-  .pix-key-box code{color:#fff; font-family:monospace; font-size:0.92rem; word-break:break-all;}
-  .copy-btn{
-    flex:0 0 auto; padding:9px 16px; border-radius:999px; border:1px solid rgba(250,243,228,0.5);
-    background:var(--dourado); color:#241E0F; font-family:'Jost'; font-size:0.82rem; font-weight:600;
-    letter-spacing:0.04em; cursor:pointer; transition:box-shadow .3s ease, transform .2s ease;
+  .upload-zone:hover{border-color:var(--verde); background:rgba(242,244,234,0.5);}
+  .upload-zone.dragover{border-color:var(--verde); background:rgba(124,138,84,0.08);}
+  .upload-icon{font-size:3rem; display:block; margin-bottom:12px;}
+  .upload-text{color:var(--tinta-suave); font-size:0.95rem;}
+
+  /* PREVIEW */
+  .preview-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(120px, 1fr));
+    gap:12px;
+    margin:20px 0;
   }
-  .copy-btn:hover{box-shadow:0 0 24px rgba(182,136,62,0.55); transform:translateY(-1px);}
-  #pixMsg{margin-top:12px; font-size:0.86rem; color:rgba(250,243,228,0.9); min-height:1.1em;}
+  .preview-item{
+    position:relative;
+    aspect-ratio:1/1;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+  .preview-item img{width:100%; height:100%; object-fit:cover;}
+  .preview-remove{
+    position:absolute; top:6px; right:6px;
+    width:24px; height:24px; border-radius:50%;
+    background:var(--terracota-funda); color:#fff;
+    border:none; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+    font-size:14px; font-weight:bold;
+    box-shadow:0 2px 6px rgba(0,0,0,0.2);
+    transition:transform .2s ease;
+  }
+  .preview-remove:hover{transform:scale(1.1);}
+
+  /* BOTÃO UPLOAD */
+  .upload-submit{
+    margin-top:20px;
+  }
+  .upload-submit .btn-magnetic{
+    background:var(--dourado); border-color:var(--dourado); color:#241E0F;
+  }
+  .upload-submit .btn-magnetic:hover{background:#96683F; border-color:#96683F; box-shadow:0 0 34px rgba(182,136,62,0.55);}
+  .upload-submit .btn-magnetic:disabled{opacity:0.5; cursor:not-allowed; transform:none; box-shadow:none;}
+
+  /* STATUS */
+  .upload-status{
+    margin-top:16px;
+    padding:12px 18px;
+    border-radius:12px;
+    font-size:0.92rem;
+    min-height:1.2em;
+  }
+  .upload-status.ok{background:rgba(124,138,84,0.1); color:var(--verde-funda); border:1px solid rgba(124,138,84,0.3);}
+  .upload-status.err{background:rgba(186,138,94,0.1); color:var(--terracota-funda); border:1px solid rgba(186,138,94,0.3);}
+
+  /* GALERIA */
+  .gallery-grid-fotos{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));
+    gap:16px;
+    margin:0 auto;
+    max-width:900px;
+  }
+  .gallery-foto-item{
+    position:relative;
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    aspect-ratio:1/1;
+  }
+  .gallery-foto-item img{width:100%; height:100%; object-fit:cover; display:block;}
+  .gallery-foto-item .foto-info{
+    position:absolute; bottom:0; left:0; right:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+    padding:20px 10px 10px;
+    color:#fff;
+    font-size:0.75rem;
+  }
+  .gallery-foto-item .foto-info span{display:block; margin-top:2px;}
+
+  /* EMPTY STATE */
+  .empty-state{
+    text-align:center;
+    padding:60px 20px;
+    color:var(--tinta-suave);
+  }
+  .empty-state .empty-icon{font-size:3.5rem; display:block; margin-bottom:16px;}
+  .empty-state p{font-size:1rem; margin-top:8px;}
 
   footer{
     background:var(--verde-funda); color:#F2F4EA; text-align:center; padding:54px 28px;
@@ -358,7 +437,8 @@
   footer .disp{font-style:italic; font-size:1.3rem; color:#FFFFFF;}
   footer p{margin-top:10px; font-size:0.85rem; color:rgba(242,244,234,0.75);}
 
-.reveal{opacity:0;}
+  .reveal{opacity:0;}
+  #enviar{scroll-margin-top:100px;}
 
   /* LOADER */
   .loader{
@@ -391,7 +471,7 @@
     100%{width:0; margin-left:100%;}
   }
 
-  /* CURSOR — PONTO DOURADO + ANEL NO HOVER */
+  /* CURSOR */
   @media (hover:hover) and (pointer:fine){
     *, *::before, *::after{cursor:none !important;}
     .cursor-dot{
@@ -429,43 +509,6 @@
   @media (hover:none), (pointer:coarse){
     .cursor-dot, .cursor-halo{display:none !important;}
   }
-
-  /* ÍCONES 3D PREMIUM */
-  .icon-3d{
-    display:inline-flex; align-items:center; justify-content:center;
-    width:64px; height:64px; border-radius:16px;
-    background:linear-gradient(145deg, var(--dourado) 0%, var(--verde) 100%);
-    color:var(--creme); font-size:1.6rem; font-weight:600;
-    box-shadow:
-      0 8px 24px -4px rgba(46,58,24,0.35),
-      0 2px 8px rgba(0,0,0,0.15),
-      inset 0 2px 4px rgba(255,255,255,0.3);
-    transform:translateY(0) perspective(500px) rotateX(0deg);
-    transition:transform .4s ease, box-shadow .4s ease;
-    position:relative;
-    margin-bottom:18px;
-  }
-  .icon-3d::after{
-    content:"";
-    position:absolute; bottom:-8px; left:50%; transform:translateX(-50%);
-    width:70%; height:8px;
-    background:radial-gradient(ellipse, rgba(0,0,0,0.25) 0%, transparent 70%);
-    border-radius:50%;
-  }
-  .icon-3d:hover{
-    transform:translateY(-6px) perspective(500px) rotateX(5deg);
-    box-shadow:
-      0 16px 36px -6px rgba(46,58,24,0.4),
-      0 4px 12px rgba(0,0,0,0.2),
-      inset 0 2px 4px rgba(255,255,255,0.3);
-  }
-  .icon-3d span{
-    position:relative; z-index:1;
-    text-shadow:0 2px 4px rgba(0,0,0,0.2);
-  }
-  .gift-card .icon-3d{
-    width:56px; height:56px; font-size:1.4rem; border-radius:14px;
-  }
 </style>
 </head>
 <body>
@@ -484,6 +527,8 @@
     <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
     <ul class="navlinks" id="navLinks">
       <li><a href="./index.html">Início</a></li>
+      <li><a href="./index.html#historia">Nossa história</a></li>
+      <li><a href="./index.html#galeria">Galeria</a></li>
       <li><a href="./arcade.html">Arcade</a></li>
       <li><a href="./index.html#confirmar">Confirmar presença</a></li>
     </ul>
@@ -502,61 +547,46 @@
   </div>
 
   <div class="hero-cinema-content">
-    <span class="hero-cinema-eyebrow reveal">Presentes</span>
-    <h1 class="hero-cinema-title reveal">Lista de Presentes</h1>
-    <p class="hero-cinema-sub reveal">Cada presente ajuda a construir o nosso recomeço.</p>
+    <span class="hero-cinema-eyebrow reveal">Galeria do casamento</span>
+    <h1 class="hero-cinema-title reveal">Compartilhe suas fotos</h1>
+    <p class="hero-cinema-sub reveal">Envie suas fotos e ajude a eternizar os melhores momentos.</p>
     <div class="hero-cinema-cta reveal">
-      <a href="#presentes" class="btn-magnetic btn-magnetic--fill" data-magnetic><span>Ver presentes</span></a>
-      <a href="./index.html" class="btn-magnetic" data-magnetic><span>Voltar ao site</span></a>
+      <a href="#enviar" class="btn-magnetic btn-magnetic--fill" data-magnetic><span>Enviar fotos</span></a>
+      <a href="#galeria-fotos" class="btn-magnetic" data-magnetic><span>Ver galeria</span></a>
     </div>
   </div>
 </header>
 
-<!-- PRESENTES -->
-<section id="presentes">
+<!-- QR CODE -->
+<section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Lista de presentes</span>
-      <h2>Quer nos presentear?</h2>
-      <p>A presença de vocês já é o nosso maior presente. Mas se quiserem nos ajudar a começar essa nova fase, aqui vão algumas ideias.</p>
+      <span class="eyebrow">Como enviar</span>
+      <h2>Escaneie e envie</h2>
+      <p>Aponte o celular para o QR code abaixo ou clique na área de upload para selecionar suas fotos.</p>
     </div>
-    <div class="gifts-grid">
-      <div class="gift-card reveal">
-        <div class="icon-3d"><span>✈</span></div>
-        <h3>Lua de mel</h3>
-        <p>Ajude a construir a viagem dos sonhos para junho de 2027.</p>
-        <p class="valor">A partir de R$ 50</p>
+
+    <div class="qr-card reveal">
+      <img src="./qrcodefotos.png" alt="QR Code para enviar fotos do casamento">
+      <h3>Envie suas fotos</h3>
+      <p>Escaneie com a câmera do celular</p>
+    </div>
+
+    <!-- ÁREA DE UPLOAD -->
+    <div class="upload-card reveal" id="enviar">
+      <h3 style="margin-bottom:4px;">Selecione suas fotos</h3>
+      <p class="upload-text">Arraste ou clique para escolher até 10 fotos</p>
+      <input type="file" id="fileInput" multiple accept="image/*" style="display:none;">
+      <div class="upload-zone" id="uploadZone">
+        <span class="upload-icon">+</span>
+        <p class="upload-text">Clique aqui ou arraste fotos</p>
+        <p style="font-size:0.8rem; color:var(--tinta-suave); margin-top:6px;">JPG, PNG, HEIC · Máx. 10 MB cada</p>
       </div>
-      <div class="gift-card reveal">
-        <div class="icon-3d"><span>⌂</span></div>
-        <h3>Casa nova</h3>
-        <p>Cada contribuição vira um tijolinho do nosso novo lar.</p>
-        <p class="valor">A partir de R$ 50</p>
+      <div class="preview-grid" id="previewGrid" style="display:none;"></div>
+      <div class="upload-submit">
+        <button class="btn-magnetic btn-magnetic--fill" id="uploadBtn" disabled data-magnetic><span>Enviar fotos para a galeria</span></button>
       </div>
-      <div class="gift-card reveal">
-        <div class="icon-3d"><span>♪</span></div>
-        <h3>Jantar especial</h3>
-        <p>Para comemorar em casa nos primeiros dias de casados.</p>
-        <p class="valor">A partir de R$ 40</p>
-      </div>
-      <div class="gift-card reveal">
-        <div class="icon-3d"><span>✿</span></div>
-        <h3>Decoração</h3>
-        <p>Detalhes que vão tornar o nosso cantinho mais aconchegante.</p>
-        <p class="valor">A partir de R$ 30</p>
-      </div>
-      <div class="gift-card reveal">
-        <div class="icon-3d"><span>§</span></div>
-        <h3>Livros &amp; cultura</h3>
-        <p>Histórias para ler juntos nos finais de semana.</p>
-        <p class="valor">A partir de R$ 25</p>
-      </div>
-      <div class="gift-card reveal">
-        <div class="icon-3d"><span>$</span></div>
-        <h3>Pix livre</h3>
-        <p>Contribua com o valor que preferir — toda ajuda é bem-vinda.</p>
-        <div class="pix-key">[INSIRA SUA CHAVE PIX AQUI]</div>
-      </div>
+      <div class="upload-status" id="uploadStatus" style="display:none;"></div>
     </div>
   </div>
 </section>
@@ -567,25 +597,29 @@
   <span class="line right"></span>
 </div>
 
-<!-- PIX -->
-<section class="alt" id="pix">
+<!-- GALERIA DE FOTOS ENVIADAS -->
+<section id="galeria-fotos" class="alt">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Contribuição via Pix</span>
-      <h2>Prefere mandar um Pix?</h2>
-      <p>É simples e volta direto para o nosso caixinha de casamento. Copie a chave abaixo.</p>
+      <span class="eyebrow">Galeria</span>
+      <h2>Fotos dos convidados</h2>
+      <p>Veja todas as fotos enviadas por quem esteve com a gente neste dia especial.</p>
     </div>
-    <div class="pix-card reveal">
-      <h3>Chave Pix dos noivos</h3>
-      <p>Use no app do seu banco para qualquer valor.</p>
-      <div class="pix-key-box">
-        <code id="pixKey">[INSIRA SUA CHAVE PIX AQUI]</code>
-        <button class="copy-btn" id="copyPix" type="button">Copiar</button>
+    <div id="galleryContainer">
+      <div class="empty-state">
+        <span class="empty-icon">+</span>
+        <h3>Nenhuma foto ainda</h3>
+        <p>Seja o primeiro a compartilhar um momento!</p>
       </div>
-      <p id="pixMsg" role="status" aria-live="polite"></p>
     </div>
   </div>
 </section>
+
+<div class="divider-seal" aria-hidden="true">
+  <span class="line left"></span>
+  <span class="seal"><img src="./monograma.png" alt="" /></span>
+  <span class="line right"></span>
+</div>
 
 <footer>
   <p class="disp">Natália &amp; Anderson</p>
@@ -608,14 +642,36 @@
 <script type="module">
   import { animate, inView } from "https://cdn.jsdelivr.net/npm/motion@11/+esm";
 
-  // LOADER — fade out quando a página carrega
+  // ===== CLOUDINARY CONFIG =====
+  const CLOUD_NAME = 'cz8gavat';
+  const UPLOAD_PRESET = 'casamento-upload-fotos';
+  const FOLDER = 'fotos-casamento';
+  const MAX_FILES = 10;
+  const MAX_SIZE_MB = 10;
+  const API_KEY = '156796887938976';
+  const API_SECRET = 'GfcNs_jj5_X9PLLsXrezpbTiGS4';
+  const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbypL1nyxU6hNOtw8brrhWlynwM96YEjbYXqsn1JfS9W2_X8ZLZHeJG4Zb-bYAwHgwUO/exec';
+
+  // ===== ESTADO =====
+  let arquivosSelecionados = [];
+  let uploading = false;
+
+  // ===== DOM =====
+  const fileInput = document.getElementById('fileInput');
+  const uploadZone = document.getElementById('uploadZone');
+  const previewGrid = document.getElementById('previewGrid');
+  const uploadBtn = document.getElementById('uploadBtn');
+  const uploadStatus = document.getElementById('uploadStatus');
+  const galleryContainer = document.getElementById('galleryContainer');
+
+  // ===== LOADER =====
   window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     if (loader) loader.classList.add('saindo');
     setTimeout(() => { if (loader) loader.remove(); }, 700);
   });
 
-  // CURSOR — PONTO DOURADO + HALO
+  // ===== CURSOR =====
   if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
     const dot = document.getElementById('cursorDot');
     const halo = document.getElementById('cursorHalo');
@@ -630,7 +686,7 @@
     })();
     document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
     document.addEventListener('mouseup', () => document.body.classList.remove('cursor-click'));
-    const hoverEls = 'a, button, [data-magnetic], input, textarea, select, .gallery-item, .gift-card, .pix-card';
+    const hoverEls = 'a, button, [data-magnetic], input, textarea, select, .upload-zone, .gift-card';
     document.addEventListener('mouseover', e => {
       if (e.target.closest(hoverEls)) document.body.classList.add('cursor-hover');
     });
@@ -639,7 +695,7 @@
     });
   }
 
-  // Menu mobile
+  // ===== MENU MOBILE =====
   const navToggle = document.getElementById('navToggle');
   const navLinks = document.getElementById('navLinks');
   navToggle.addEventListener('click', () => {
@@ -651,7 +707,7 @@
     navToggle.setAttribute('aria-expanded', 'false');
   }));
 
-  // Player de música
+  // ===== MÚSICA =====
   const bgMusic = document.getElementById('bgMusic');
   const musicToggle = document.getElementById('musicToggle');
   if (bgMusic && musicToggle) {
@@ -685,12 +741,9 @@
     });
   }
 
-  // Scroll suave com inércia
+  // ===== SCROLL SUAVE =====
   const lenis = new Lenis({ duration: 1.1 });
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
+  function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
@@ -699,7 +752,7 @@
     });
   });
 
-  // Efeito magnético nos botões
+  // ===== EFEITO MAGNÉTICO =====
   document.querySelectorAll('[data-magnetic]').forEach(btn => {
     btn.addEventListener('mousemove', (e) => {
       const rect = btn.getBoundingClientRect();
@@ -716,7 +769,7 @@
     });
   });
 
-  // Parallax cinematográfico da hero
+  // ===== PARALLAX HERO =====
   const heroPhoto = document.querySelector('.hero-cinema-layer--photo');
   const heroRays = document.querySelector('.hero-rays-parallax');
   const heroContent = document.querySelector('.hero-cinema-content');
@@ -735,7 +788,7 @@
     lenis.on('scroll', updateHeroParallax);
   }
 
-  // Reveal on scroll (Motion)
+  // ===== REVEAL ON SCROLL =====
   const revealEls = document.querySelectorAll('.reveal');
   revealEls.forEach(el => {
     inView(el, () => {
@@ -747,57 +800,215 @@
     }, { amount: 0.15 });
   });
 
-  // Efeito tilt 3D nos cards
-  const tiltEls = document.querySelectorAll('.gift-card, .pix-card');
-  tiltEls.forEach(el => {
-    el.addEventListener('mousemove', (e) => {
-      const rect = el.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      const rotateX = ((y - rect.height / 2) / (rect.height / 2)) * -8;
-      const rotateY = ((x - rect.width / 2) / (rect.width / 2)) * 8;
-      animate(el, {
-        transform: `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`
-      }, { duration: 0.4, easing: [0.16, 1, 0.3, 1] });
-    });
-    el.addEventListener('mouseleave', () => {
-      animate(el, {
-        transform: 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)'
-      }, { duration: 0.6, easing: [0.16, 1, 0.3, 1] });
-    });
-  });
-
-  // Copiar chave Pix
-  const copyBtn = document.getElementById('copyPix');
-  const pixKey = document.getElementById('pixKey');
-  const pixMsg = document.getElementById('pixMsg');
-  if (copyBtn && pixKey) {
-    copyBtn.addEventListener('click', () => {
-      const chave = pixKey.textContent.trim();
-      if (chave.startsWith('[')) { pixMsg.textContent = 'Substitua a chave Pix no código antes de publicar.'; return; }
-      navigator.clipboard.writeText(chave).then(() => {
-        pixMsg.textContent = 'Chave Pix copiada!';
-      }).catch(() => {
-        pixMsg.textContent = 'Não foi possível copiar. Copie manualmente.';
-      });
-    });
-  }
-
-  // Animação dos divisores ao entrar na tela
+  // ===== DIVIDERS =====
   const sealDividers = document.querySelectorAll('.divider-seal');
   if ('IntersectionObserver' in window) {
     const divObserver = new IntersectionObserver((entries, obs) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('seen');
-          obs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { e.target.classList.add('seen'); obs.unobserve(e.target); }
       });
     }, { threshold: 0.35 });
     sealDividers.forEach(d => divObserver.observe(d));
   } else {
     sealDividers.forEach(d => d.classList.add('seen'));
   }
+
+  // ===== UPLOAD DE FOTOS =====
+  function formatarTamanho(bytes) {
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / 1048576).toFixed(1) + ' MB';
+  }
+
+  function validarArquivos(files) {
+    const validos = [];
+    const erros = [];
+    Array.from(files).forEach(f => {
+      if (!f.type.startsWith('image/')) { erros.push(f.name + ': não é imagem'); return; }
+      if (f.size > MAX_SIZE_MB * 1024 * 1024) { erros.push(f.name + ': muito grande (' + formatarTamanho(f.size) + ')'); return; }
+      if (arquivosSelecionados.length + validos.length >= MAX_FILES) { erros.push('Máximo de ' + MAX_FILES + ' fotos'); return; }
+      validos.push(f);
+    });
+    if (erros.length) mostrarStatus(erros.join('. '), 'err');
+    return validos;
+  }
+
+  function adicionarArquivos(files) {
+    const validos = validarArquivos(files);
+    if (!validos.length) return;
+    arquivosSelecionados = [...arquivosSelecionados, ...validos].slice(0, MAX_FILES);
+    atualizarPreview();
+  }
+
+  function atualizarPreview() {
+    if (!arquivosSelecionados.length) {
+      previewGrid.style.display = 'none';
+      uploadBtn.disabled = true;
+      return;
+    }
+    previewGrid.style.display = 'grid';
+    previewGrid.innerHTML = arquivosSelecionados.map((f, i) => `
+      <div class="preview-item">
+        <img src="${URL.createObjectURL(f)}" alt="Preview ${i + 1}">
+        <button class="preview-remove" onclick="removerArquivo(${i})" title="Remover">×</button>
+      </div>
+    `).join('');
+    uploadBtn.disabled = false;
+  }
+
+  window.removerArquivo = function(index) {
+    arquivosSelecionados.splice(index, 1);
+    atualizarPreview();
+    if (!arquivosSelecionados.length) uploadStatus.style.display = 'none';
+  };
+
+  function mostrarStatus(msg, tipo) {
+    uploadStatus.style.display = 'block';
+    uploadStatus.className = 'upload-status ' + tipo;
+    uploadStatus.textContent = msg;
+  }
+
+  // ===== CLICAR NA ZONA DE UPLOAD =====
+  uploadZone.addEventListener('click', () => fileInput.click());
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length) adicionarArquivos(fileInput.files);
+    fileInput.value = '';
+  });
+
+  // ===== DRAG & DROP =====
+  uploadZone.addEventListener('dragover', (e) => { e.preventDefault(); uploadZone.classList.add('dragover'); });
+  uploadZone.addEventListener('dragleave', () => uploadZone.classList.remove('dragover'));
+  uploadZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    uploadZone.classList.remove('dragover');
+    if (e.dataTransfer.files.length) adicionarArquivos(e.dataTransfer.files);
+  });
+
+  // ===== UPLOAD PARA CLOUDINARY =====
+  async function uploadCloudinary(arquivo) {
+    const formData = new FormData();
+    formData.append('file', arquivo);
+    formData.append('upload_preset', UPLOAD_PRESET);
+    formData.append('folder', FOLDER);
+
+    const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/auto/upload`, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!response.ok) throw new Error('Falha no upload');
+    return await response.json();
+  }
+
+  uploadBtn.addEventListener('click', async () => {
+    if (uploading || !arquivosSelecionados.length) return;
+    uploading = true;
+    uploadBtn.disabled = true;
+    uploadBtn.querySelector('span').textContent = 'Enviando...';
+    uploadStatus.style.display = 'none';
+
+    let enviados = 0;
+    const total = arquivosSelecionados.length;
+
+    try {
+      for (const arquivo of arquivosSelecionados) {
+        try {
+          const resultado = await uploadCloudinary(arquivo);
+          enviados++;
+          await salvarFoto(resultado.secure_url, arquivo.name);
+          mostrarStatus(`Enviando... ${enviados}/${total}`, 'ok');
+        } catch (e) {
+          console.error('Erro no upload:', e);
+        }
+      }
+
+      if (enviados > 0) {
+        mostrarStatus(`✅ ${enviados} foto(s) enviada(s) com sucesso!`, 'ok');
+        arquivosSelecionados = [];
+        previewGrid.style.display = 'none';
+        carregarGaleria();
+      } else {
+        mostrarStatus('❌ Não foi possível enviar. Tente novamente.', 'err');
+      }
+    } finally {
+      uploading = false;
+      uploadBtn.disabled = false;
+      uploadBtn.querySelector('span').textContent = 'Enviar fotos para a galeria';
+    }
+  });
+
+  // ===== GALERIA =====
+  async function carregarGaleria() {
+    try {
+      const response = await fetch(URL_APPS_SCRIPT + '?acao=fotos');
+      const fotos = await response.json();
+
+      if (fotos && fotos.length > 0) {
+        exibirGaleria(fotos);
+      } else {
+        mostrarEstadoVazio();
+      }
+    } catch (e) {
+      console.error('Erro ao carregar galeria:', e);
+      mostrarEstadoVazio();
+    }
+  }
+
+  async function salvarFoto(url, nome) {
+    try {
+      await fetch(URL_APPS_SCRIPT, {
+        method: 'POST',
+        body: JSON.stringify({
+          acao: 'foto',
+          url: url,
+          nome: nome || 'Convidado',
+          data: new Date().toISOString(),
+          mesa: 'Geral'
+        })
+      });
+    } catch (e) {
+      console.error('Erro ao salvar foto:', e);
+    }
+  }
+
+  function exibirGaleria(fotos) {
+    galleryContainer.innerHTML = `
+      <div class="gallery-grid-fotos">
+        ${fotos.map(f => `
+          <div class="gallery-foto-item reveal">
+            <img src="${f.url}" alt="Foto do casamento" loading="lazy">
+            <div class="foto-info">
+              <span>${f.nome || 'Foto'}</span>
+              <span>${new Date(f.data).toLocaleDateString('pt-BR')}</span>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    galleryContainer.querySelectorAll('.reveal').forEach(el => {
+      inView(el, () => {
+        animate(
+          el,
+          { opacity: [0, 1], transform: ['translateY(48px) scale(0.96)', 'translateY(0) scale(1)'] },
+          { duration: 1.2, easing: [0.16, 1, 0.3, 1] }
+        );
+      }, { amount: 0.15 });
+    });
+  }
+
+  function mostrarEstadoVazio() {
+    galleryContainer.innerHTML = `
+      <div class="empty-state">
+        <span class="empty-icon">+</span>
+        <h3>Nenhuma foto ainda</h3>
+        <p>Seja o primeiro a compartilhar um momento!</p>
+      </div>
+    `;
+  }
+
+  // Carrega galeria ao abrir a página
+  carregarGaleria();
 </script>
 </body>
 </html>
